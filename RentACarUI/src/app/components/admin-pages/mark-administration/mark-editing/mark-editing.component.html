@@ -1,0 +1,31 @@
+<div class="container">
+    <div *ngIf="mark">
+      <form #form="ngForm"
+            (submit)="updateMark()">
+        <div class="form-group">
+        <label for="mark">Name</label>
+        <input class="form-control form-control-lg"
+               name="name"
+               #name="ngModel"
+               [(ngModel)]="mark.name">
+      </div>
+      <div class="form-group">
+        <label for="mark">Description</label>
+        <input class="form-control form-control-lg"
+               name="description"
+               #description="ngModel"
+               [(ngModel)]="mark.description">
+      </div>
+      <div class="form-group">
+        <label for="mark">Origin</label>
+        <input class="form-control form-control-lg"
+               name="orgin"
+               #orgin="ngModel"
+               [(ngModel)]="mark.orgin">
+      </div>
+        <button type="submit"
+                class="btn btn-primary">Edit
+        </button>
+      </form>
+    </div>
+  </div>

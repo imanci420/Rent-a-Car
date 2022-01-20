@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Login</h2>
+    <form #form="ngForm"
+        (submit)="login()">
+    <div class="forms-group">
+        <label for="customer">Mail</label>
+        <input type="text" class="form-control"
+                name="mail"
+                #mail="ngModel"
+                [(ngModel)]="loginDto.mail">
+    </div>
+    <div class="forms-group">
+        <label for="customer">Password</label>
+        <input type="password" class="form-control"
+                name="password"
+                #password="ngModel"
+                [(ngModel)]="loginDto.password">
+    
+    <button type="submit" class="btn btn-primary" style="margin-right: 2rem;">Login</button>
+    <button type="button" class="btn btn-info" routerLink="/register/customer">Register</button>
+</div>

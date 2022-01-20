@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>City Creation</h2>
+    <form #form="ngForm"
+          (submit)="createCity()">
+      <div class="form-group">
+        <label for="city">Name</label>
+        <input class="form-control form-control-lg"
+               name="name"
+               #name="ngModel"
+               [(ngModel)]="cityForm.name">
+      </div>
+      <button type="submit"
+              class="btn btn-primary">Create
+      </button>
+    </form>
+  
+  </div>

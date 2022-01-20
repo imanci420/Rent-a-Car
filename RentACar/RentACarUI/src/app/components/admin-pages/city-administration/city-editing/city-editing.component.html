@@ -1,0 +1,17 @@
+<div class="container">
+    <div *ngIf="city">
+      <form #form="ngForm"
+            (submit)="updateCity()">
+        <div class="form-group">
+          <label for="genre-name">City name: </label>
+          <input class="form-control form-control-lg"
+                 name="name"
+                 #name="ngModel"
+                 [(ngModel)]="city.name">
+        </div>
+        <button type="submit"
+                class="btn btn-primary">Edit
+        </button>
+      </form>
+    </div>
+  </div>

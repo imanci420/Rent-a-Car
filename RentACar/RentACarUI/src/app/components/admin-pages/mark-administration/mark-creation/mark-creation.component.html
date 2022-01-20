@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Mark Creation</h2>
+    <form #form="ngForm"
+          (submit)="createMark()">
+      <div class="form-group">
+        <label for="city">Name</label>
+        <input class="form-control form-control-lg"
+               name="name"
+               #name="ngModel"
+               [(ngModel)]="markForm.name">
+      </div>
+      <div class="form-group">
+        <label for="city">Description</label>
+        <input class="form-control form-control-lg"
+               name="description"
+               #description="ngModel"
+               [(ngModel)]="markForm.description">
+      </div>
+      <div class="form-group">
+        <label for="city">Origin</label>
+        <input class="form-control form-control-lg"
+               name="orgin"
+               #orgin="ngModel"
+               [(ngModel)]="markForm.orgin">
+      </div>
+      <button type="submit"
+              class="btn btn-primary">Create
+      </button>
+    </form>
+  
+  </div>

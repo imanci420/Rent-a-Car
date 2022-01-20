@@ -1,0 +1,46 @@
+<div class="container">
+    <h2 style="margin-top: 1rem;">Mark Administration</h2>
+    <div class="buttons"
+         style="margin: 1rem;">
+      <button type="submit"
+              class="btn btn-primary"
+              style="margin-right: 1rem;"
+              (click)='redirectToCities()'>Cities</button>
+      <button type="submit"
+              class="btn btn-primary"
+              (click)='redirectToCars()'>Cars</button>
+    </div>
+  
+    <button type="submit"
+            class="btn btn-primary"
+            style="margin-top: 0.2rem;
+                 margin-left: 1rem;
+                 margin-bottom: 1rem;"
+            routerLink='create'>Create Mark</button>
+  
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col"
+              style="width: 80%">Mark Name</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mark of marks, let i = index">
+          <th scope="row">{{mark.name}}</th>
+          <td>
+            <button type="submit"
+                    class="btn btn-primary"
+                    routerLink='details/{{mark.id}}'>Preview</button>
+          </td>
+          <td>
+            <button type="submit"
+                    class="btn btn-danger mr-3"
+                    (click)="deleteMark(mark.id, i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

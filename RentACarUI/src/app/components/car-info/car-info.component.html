@@ -1,0 +1,126 @@
+<h2 class="text-center">Car Info </h2>
+
+<div *ngIf="car && mark && city" class="container mt-5">
+    <div class="row">
+        <div class="col d-flex justify-content-end align-items-center">
+            Mark:
+        </div>
+        <div class="col">
+            <div class="font-size-24px">
+                <strong>{{ mark.name }}</strong>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-end align-items-center">
+            Model:
+        </div>
+        <div class="col">
+            <div class="font-size-24px">
+                <strong>{{ car.model }}</strong>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-end align-items-center">
+            City:
+        </div>
+        <div class="col">
+            <div class="font-size-24px">
+                <strong>{{ city.name }}</strong>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-end align-items-center">
+            Capacity:
+        </div>
+        <div class="col">
+            <div class="font-size-24px">
+                <strong>{{ car.capacity }}</strong>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-end align-items-center">
+            Price Per Hour($):
+        </div>
+        <div class="col">
+            <div class="font-size-24px">
+                <strong>{{ car.pricePerHour }}</strong>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-end align-items-center">
+            Color:
+        </div>
+        <div class="col">
+            <div class="font-size-24px">
+                <strong>{{ car.color }}</strong>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-end align-items-center">
+            Location:
+        </div>
+        <div class="col">
+            <div class="font-size-24px">
+                <strong>{{ car.location }}</strong>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-end align-items-center">
+            Registration Number:
+        </div>
+        <div class="col">
+            <div class="font-size-24px">
+                <strong>{{ car.registrationNumber }}</strong>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-end align-items-center">
+            Status:
+        </div>
+        <div class="col">
+            <div class="font-size-24px">
+                <strong>{{ car.status ? 'Available' : 'Taken' }}</strong>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-end align-items-center">
+            Transmission:
+        </div>
+        <div class="col">
+            <div class="font-size-24px">
+                <strong>{{ car.transmission }}</strong>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!car.status && currentRent" class="row mt-3">
+        <div class="col text-danger fw-bold">Car is taken</div>
+        <div *ngIf="currentRent.customerId == userId" class="col">
+            <date-picker [minDate]="minDate" [date]="currentRent.rentTime"></date-picker>
+            <button (click)="extendRentPeriod()" class="btn btn-primary mt-1">Extend Rent Period</button>
+        </div>
+    </div>
+    <div *ngIf="car.status" class="row mt-5">
+        <div class="col-6">
+            <label><strong>End Date:</strong></label>
+            <date-picker [(date)]="rentEndDate" [minDate]="minDate">
+            </date-picker>
+
+            <button (click)="onRentClick()" class="btn btn-primary mt-3">Rent</button>
+        </div>
+        <div class="col-6">
+            <label><strong>Price:</strong></label>
+            <div>
+                {{ rentPrice | currency }}
+            </div>
+        </div>
+    </div>
+</div>

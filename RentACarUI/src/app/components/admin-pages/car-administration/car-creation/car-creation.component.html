@@ -1,0 +1,61 @@
+<div class="container">
+    <h2>Car Creation</h2>
+    <form #form="ngForm" (submit)="createCar()">
+        <div>
+            <label for="city">Mark</label>
+            <select class="form-select" name="status" #status="ngModel" [(ngModel)]="carForm.markId">
+                <option *ngFor="let mark of marks" [ngValue]="mark.id">{{ mark.name }}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <select class="form-select" name="status" #status="ngModel" [(ngModel)]="carForm.cityId">
+                <option *ngFor="let city of cities" [ngValue]="city.id">{{ city.name }}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="city">Model</label>
+            <input class="form-control form-control-lg" name="name" #name="ngModel" [(ngModel)]="carForm.model">
+        </div>
+        <div class="form-group">
+            <label for="city">Capacity</label>
+            <input class="form-control form-control-lg" name="description" #description="ngModel"
+                [(ngModel)]="carForm.capacity">
+        </div>
+        <div class="form-group">
+            <label for="city">Price Per Hour($)</label>
+            <input class="form-control form-control-lg" name="pricePerHour" #pricePerHour="ngModel"
+                [(ngModel)]="carForm.pricePerHour">
+        </div>
+        <div class="form-group">
+            <label for="city">Color</label>
+            <input class="form-control form-control-lg" name="color" #color="ngModel" [(ngModel)]="carForm.color">
+        </div>
+        <div class="form-group">
+            <label for="city">Location</label>
+            <input class="form-control form-control-lg" name="location" #location="ngModel"
+                [(ngModel)]="carForm.location">
+        </div>
+        <div class="form-group">
+            <label for="city">Registration Number</label>
+            <input class="form-control form-control-lg" name="registrationNumber" #registrationNumber="ngModel"
+                [(ngModel)]="carForm.registrationNumber">
+        </div>
+        <div class="form-group">
+            <label for="city">Status</label>
+            <select class="form-select" name="status" #status="ngModel" [(ngModel)]="carForm.status">
+                <option [ngValue]="true">Available</option>
+                <option [ngValue]="false">Taken</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="city">Transmission</label>
+            <input class="form-control form-control-lg" name="transmission" #transmission="ngModel"
+                [(ngModel)]="carForm.transmission">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create
+        </button>
+    </form>
+
+</div>

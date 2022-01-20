@@ -1,0 +1,57 @@
+<div class="container">
+    <h2>Register</h2>
+    <form #form="ngForm"
+        (submit)="register()">
+    <div class="forms-group">
+        <label for="customer">Name</label>
+        <input class="form-control"
+                name="name"
+                #name="ngModel"
+                [(ngModel)]="customerForm.name"
+                type="text">
+    </div>
+    <div class="forms-group">
+        <label for="customer">Mail</label>
+        <input type="text" class="form-control"
+                name="mail"
+                #mail="ngModel"
+                [(ngModel)]="customerForm.mail">
+    </div>
+    <div class="forms-group">
+        <label for="customer">Phone Number</label>
+        <input type="text" class="form-control"
+                name="phoneNumber"
+                #phoneNumber="ngModel"
+                [(ngModel)]="customerForm.phoneNuber">
+    </div>
+    <div class="forms-group">
+        <label for="customer">Debit Card</label>
+        <input type="text" class="form-control"
+                name="debitCard"
+                #debitCard="ngModel"
+                [(ngModel)]="customerForm.debitCard">
+    </div>
+    <div class="forms-group">
+        <label for="customer">Password</label>
+        <input type="password" class="form-control"
+                name="password"
+                #password="ngModel"
+                [(ngModel)]="customerForm.password">
+    </div>
+    <div class="forms-control">
+        <label for="customer">Repeat password</label>
+        <input type="password" class="form-control"
+                name="repeatPassword"
+                #repeatPassword="ngModel"
+                [(ngModel)]="customerForm.repeatPassword">
+    </div>
+    <div class="forms-control">
+        <label for="customer">Passport Number</label>
+        <input type="password" class="form-control"
+                name="passportNumber"
+                #passportNumber="ngModel"
+                [(ngModel)]="customerForm.passportNumber">
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+</div>
